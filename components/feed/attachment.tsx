@@ -1,7 +1,7 @@
-const AttachmentTile = ({attachment} : any) => { 
+const AttachmentTile = ({ attachment }: any) => { 
     return (
         <div style={{height:'100%', width:'100%'}}>
-            <img src={attachment.url} style={{height:'30%', width:'30%'}} />
+            <img src={attachment.uri} style={{height:'200px', width:'300px'}} />
         </div>
     );
 };
