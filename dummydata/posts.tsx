@@ -2,7 +2,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo1.png" },
             name: "Books for all",
             username:"bfa.inc"
         },
@@ -22,7 +22,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo1.png" },
             name: "MIET Africa",
             username:"miet.africa"
         },
@@ -42,7 +42,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo1.png" },
             name: "Books for all",
             username:"bfa.inc"
         },
@@ -62,7 +62,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo2.png" },
             name: "Cambodian Children's Fund",
             username:"ccf.cambodia"
         },
@@ -84,7 +84,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo2.png" },
             name: "UNICEF",
             username:"unicef"
         },
@@ -104,7 +104,7 @@ export const posts = [
     {
         sender: {
             id: '',
-            image: { url: "" },
+            image: { url: "/images/profile_image/ngo2.png" },
             name: "MIET Africa",
             username:"miet.africa"
         },
