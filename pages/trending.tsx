@@ -3,19 +3,22 @@ import Feed from '../components/feed';
 import CreatePost from '../components/feed/createPost';
 import Link from 'next/link';
 import LeftNav from '../components/feed/leftNav';
-import CenterNav from '../components/feed/centerNav';
 import RightNav from '../components/feed/rightNav';
+import CenterNav from '../components/feed/centerNav';
 import Header from '../components/header';
 
-const FeedPage = () => {
+const TrendingPage = () => {
   return (
-        <div style={{height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', paddingTop:'10vh'}}>
+        <div style={{maxHeight:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', paddingTop:'15vh'}}>
       {/* HEADER */}
             <Header/>
             <LeftNav />
             <CenterNav />
-            <RightNav />
+            <RightNav/>
         </div>
   )
 }
-export default FeedPage;
+
+
+
+export default TrendingPage;

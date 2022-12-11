@@ -5,17 +5,20 @@ const FeedTile = ({ feed_item }: any) => {
     
     console.log(feed_item);
     return (
-        <div style={{ padding: '0px' , border:'1px solid black', borderRadius:20, margin:'24px 12px'}}>
-            <div className="sender_info" style={{padding:10, margin:4, display:'flex', flexDirection:'row', alignItems:'center'}}>
-                <img src={feed_item.sender.image.url} style={{ height: 40, width: 40}} />
-                <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginLeft:8}}>
-                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, padding: 0}}>
-                        <p style={{ marginRight:4, margin:2}}>{feed_item.sender.name}</p> 
-                        <img src={"/images/icons/verified.svg"} style={{height:16, width:16}} />
+        <div style={{ padding: '0px' , border:'1px solid black', borderRadius:20, margin:'24px 12px', maxWidth:'400px'}}>
+            <div className="sender_info" style={{ padding: 10, margin: 4, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent:'space-between'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                    <img src={feed_item.sender.image.url} style={{ height: 40, width: 40}} />
+                    <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start', justifyContent:'center', marginLeft:8}}>
+                        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, padding: 0}}>
+                            <p style={{ marginRight:4, margin:2}}>{feed_item.sender.name}</p> 
+                            <img src={"/images/icons/verified.svg"} style={{height:16, width:16}} />
+                        </div>
+                        <p style={{margin:0, fontSize:12}}>{feed_item.header.timestamp}</p>
+                        {/* <p>{feed_item.sender.username}</p> */}
                     </div>
-                    <p style={{margin:0, fontSize:12}}>{feed_item.header.timestamp}</p>
-                    {/* <p>{feed_item.sender.username}</p> */}
                 </div>
+                <p>+ Follow</p>
             </div>
             <div>
                 <p style={{padding:"0px 8px"}}>{feed_item.info.caption}</p>

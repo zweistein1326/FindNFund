@@ -12,7 +12,7 @@ export const posts = [
         },
         info: {
             caption: 'We are raising funds for sponsoring 3 bright students who have showed high caliber in the fields of science and technology. Read More',
-            attachments: [{uri:"https://github.com/zweistein1326/FindNFund/blob/main/images/africa_children.png?raw=true"}],
+            attachments: [{uri:"https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children.png?raw=true"}],
         },
         stats: {
             likes: 90,
@@ -32,7 +32,7 @@ export const posts = [
         },
         info: {
             caption: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
-            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/images/africa_children_2.png?raw=true"}],
+            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children_2.png?raw=true"}],
         },
         stats: {
             likes: 90,
@@ -52,7 +52,7 @@ export const posts = [
         },
         info: {
             caption: 'We are raising funds for sponsoring 3 bright students who have showed high caliber in the fields of science and technology. Read More',
-            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/images/africa_children_2.png?raw=true"}],
+            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children_2.png?raw=true"}],
         },
         stats: {
             likes: 90,
@@ -74,7 +74,7 @@ export const posts = [
         },
         info: {
             caption: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
-            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/images/india_children_2.png?raw=true"}],
+            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/india_children_2.png?raw=true"}],
         },
         stats: {
             likes: 90,
@@ -94,7 +94,7 @@ export const posts = [
         },
         info: {
             caption: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
-            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/images/india_children.png?raw=true"}],
+            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/india_children.png?raw=true"}],
         },
         stats: {
             likes: 90,
@@ -114,7 +114,7 @@ export const posts = [
         },
         info: {
             caption: 'We are raising funds for sponsoring 3 bright students who have showed high caliber in the fields of science and technology. Read More',
-            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/images/africa_children_2.png?raw=true"}],
+            attachments: [{uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children_2.png?raw=true"}],
         },
         stats: {
             likes: 90,
