@@ -8,7 +8,7 @@ const CreatePost = () => {
             <div style={{paddingLeft:'120px'}}>
                 <h1>Create a Post</h1>
                 <div style={{background:'#D9D9D9', width:'60vw', height:'60vh', padding:'20px 40px', display:'flex', flexDirection:'column'}}>
-                    <div className={"add-button"}>
+                    <div className={"add-button"} style={{border:'1px solid black', width:'100px', minHeight:'100px', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', marginBottom:40}}>
                         <h1>+</h1>
                     </div>
                     <div className="caption-input" style={{width:'100%'}}>
