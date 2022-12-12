@@ -1,9 +1,10 @@
 import { Input } from "@mui/material";
+import Container from "../../components/container";
 import Header from "../../components/header";
 
 const CreatePost = () => { 
     return (
-        <div style={{paddingTop:'10vh'}}>
+        <Container>
             <Header/>
             <div style={{paddingLeft:'120px'}}>
                 <h1>Create a Post</h1>
@@ -20,7 +21,7 @@ const CreatePost = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     )
 }
 

@@ -6,16 +6,20 @@ import LeftNav from '../components/feed/leftNav';
 import CenterNav from '../components/feed/centerNav';
 import RightNav from '../components/feed/rightNav';
 import Header from '../components/header';
+import Container from '../components/container';
 
 const FeedPage = () => {
   return (
-        <div style={{height:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', paddingTop:'10vh'}}>
+        <Container>
       {/* HEADER */}
             <Header/>
             <LeftNav />
-            <CenterNav />
+            <CenterNav>
+              <CreatePost/>
+              <Feed/>
+            </CenterNav>
             <RightNav />
-        </div>
+        </Container>
   )
 }
 export default FeedPage;

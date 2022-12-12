@@ -6,16 +6,19 @@ import LeftNav from '../components/feed/leftNav';
 import RightNav from '../components/feed/rightNav';
 import CenterNav from '../components/feed/centerNav';
 import Header from '../components/header';
+import Container from '../components/container';
 
 const TrendingPage = () => {
   return (
-        <div style={{maxHeight:'100vh', width:'100vw', display:'flex', alignItems:'center', justifyContent:'center', paddingTop:'15vh'}}>
-      {/* HEADER */}
-            <Header/>
-            <LeftNav />
-            <CenterNav />
-            <RightNav/>
-        </div>
+      <Container>
+        <Header/>
+        <LeftNav />
+        <CenterNav>
+          <CreatePost/>
+          <Feed/>
+        </CenterNav>
+        <RightNav/>
+      </Container>
   )
 }
 

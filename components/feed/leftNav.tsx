@@ -14,9 +14,9 @@ const LeftNav = () => {
     const Top = () => {
         return (
             <div style={{height:'40vh', width:'100%'}}>
-                <p style={{fontSize:12}}>Feeds</p>
+                {/* <p style={{fontSize:12, paddingLeft:24}}>Feeds</p> */}
                 {tabs.map((tab, index) =>
-                    <div key={index} style={{borderRadius:40, backgroundColor: selectedTab == index ? '#8BFFD5' : 'white', height:'50px', padding:'0px 8px', display:'flex', alignItems:'center', justifyContent:'flex-start'}}>
+                    <div key={index} style={{backgroundColor: selectedTab == index ? '#8BFFD5' : 'white', height:'50px', padding:'0px 20px', display:'flex', alignItems:'center', justifyContent:'center'}}>
                         <Link href={tab.href} onClick={() => { selectTab(index) }}>
                             <TextIcon text={tab.title} />
                         </Link>
@@ -37,7 +37,7 @@ const LeftNav = () => {
         return (
             <div style={{height:'50vh', width:'100%'}}>
                 {tabs.map((tab, index) =>
-                    <div key={index} style={{borderRadius:40, height:'50px', padding:'0px 8px', display:'flex', alignItems:'center', justifyContent:'flex-start', marginBottom:20}}>
+                    <div key={index} style={{height:'50px', padding:'0px 20px', display:'flex', alignItems:'center', justifyContent:'center', marginBottom:20,  width:'100%'}}>
                         <Link href={tab.href}>
                             <TextIcon text={tab.title} />
                         </Link>
@@ -48,7 +48,7 @@ const LeftNav = () => {
     }
 
     return (
-        <div style={{width:'20vw', padding:'0px 80px'}}>
+        <div style={{margin:0, marginRight: 40, padding:'0px 0px', width:'22%'}}>
             <Top />
             <Bottom/>
         </div>

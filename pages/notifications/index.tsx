@@ -1,12 +1,18 @@
+import Container from "../../components/container";
+import CenterNav from "../../components/feed/centerNav";
+import LeftNav from "../../components/feed/leftNav";
 import Header from "../../components/header"
+import MessageList from "../../components/messages/list";
 
 const Notifications = () => {
     return (
-        <div style={{ paddingTop: '80px' }}>
+        <Container>
             <Header />
-            <h1>Notifications</h1>
-        </div>
-    );
+            <LeftNav />
+            <CenterNav>
+                {/* <MessageList /> */}
+            </CenterNav>
+        </Container>)
 }
 
 export default Notifications;

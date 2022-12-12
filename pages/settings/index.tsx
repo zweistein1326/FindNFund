@@ -1,12 +1,17 @@
+import Container from "../../components/container";
+import CenterNav from "../../components/feed/centerNav";
+import LeftNav from "../../components/feed/leftNav";
 import Header from "../../components/header";
 
 const Settings = () => {
     return (
-        <div style={{ paddingTop: '80px' }}>
+        <Container>
             <Header />
-            <h1>Settings</h1>
-        </div>
-    );
+            <LeftNav />
+            <CenterNav>
+                {/* <MessageList /> */}
+            </CenterNav>
+        </Container>)
 }
 
 export default Settings;
