@@ -7,7 +7,7 @@ export const users = [
         password: "BFA",
         verified: true,
         type: 1,
-        profile_image_url:""
+        profile_image_url:"/images/profile_image/ngo1.png"
         // TYPE 1 = VERIFIED ORGANISATION
     },
     {   
@@ -17,6 +17,7 @@ export const users = [
         password: "MIET Africa",
         verified: true,
         type: 1,
+        profile_image_url:"/images/profile_image/ngo2.png"
         // TYPE 1 = VERIFIED ORGANISATION
     },
     {   
@@ -26,6 +27,7 @@ export const users = [
         password: "MIET Africa",
         verified: false,
         type: 2,
+        profile_image_url:"/images/profile_image/ngo1.png"
         // TYPE 2 = UNVERIFIED ORGANISATION
     }
     
