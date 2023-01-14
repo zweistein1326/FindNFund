@@ -1,5 +1,5 @@
 import { Input } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import Container from "../../components/container";
 import Header from "../../components/header";
 import ImageIcon from '@mui/icons-material/Image';
@@ -13,8 +13,8 @@ const CreatePost = () => {
         text:''
     });
 
-    const inputImageRef = useRef();
-    const inputVideoRef = useRef();
+    const inputImageRef: any = useRef();
+    const inputVideoRef: any = useRef();
     // const inputLinkRef = useRef();
 
     const removeAsset = (assetIndex: number) => {
@@ -43,29 +43,27 @@ const CreatePost = () => {
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                         <div className="auxillary-input" style={{display:'flex', flexDirection:'row'}}>
                             <div style={{marginRight: '12px'}}>
-                                <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width:0}} ref={inputImageRef} onChange={(e) => {
-                                    setForm({...form, assets: [...form.assets, ...e.target.files]})
+                                <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width: 0 }} ref={inputImageRef} onChange={(e) => {
+                                    if (e.target.files) {
+                                        const files: any = e.target.files;
+                                        setForm({...form, assets: [...form.assets, ...files]})
+                                    }
                                 }}/>
                                 <ImageIcon onClick={() => {
                                     inputImageRef.current?.click();
                                 }} fontSize={'medium'}/>
                             </div>
                             <div style={{marginRight: '12px'}}>
-                                <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width:0}} ref={inputVideoRef} onChange={(e) => {
-                                    setForm({...form, assets: [...form.assets, ...e.target.files]})
+                                <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width: 0 }} ref={inputVideoRef} onChange={(e) => {
+                                    if (e.target.files) {
+                                        const files: any = e.target.files;
+                                        setForm({ ...form, assets: [...form.assets, ...files] })
+                                    }
                                 }}/>
                                 <Videocam onClick={() => {
                                     inputVideoRef.current?.click();
                                 }} fontSize={'medium'}/>
                             </div>
-                            {/* <div style={{marginRight: '12px'}}>
-                                <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width:0}} ref={inputLinkRef} onChange={(e) => {
-                                    setForm({...form, images: [...form.images, ...e.target.files]})
-                                }}/>
-                                <Link onClick={() => {
-                                    inputLinkRef.current?.click();
-                                }} fontSize={'medium'}/>
-                            </div> */}
                         </div>
                         <div className="action-buttons" style={{display:'flex', flexDirection:'row', alignItems:'flex-end', width:'100%', justifyContent:'flex-end', height:'100%'}}>
                             <p style={{padding:'10px 20px'}}>Draft</p>
