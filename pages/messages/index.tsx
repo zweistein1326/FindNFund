@@ -6,12 +6,8 @@ import Inbox from "../../components/messages";
 
 const Messages = () => {
     return (
-        <Container>
-            <Header />
-            <LeftNav />
-            <CenterNav>
-                <Inbox />
-            </CenterNav>
+        <Container rightNav={false}>
+            <Inbox />
         </Container>
     )
 }

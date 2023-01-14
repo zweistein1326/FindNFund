@@ -11,14 +11,8 @@ import Container from '../components/container';
 const FeedPage = () => {
   return (
         <Container>
-      {/* HEADER */}
-            <Header/>
-            <LeftNav />
-            <CenterNav>
-              <CreatePost/>
-              <Feed/>
-            </CenterNav>
-            <RightNav />
+            <CreatePost/>
+            <Feed/>
         </Container>
   )
 }

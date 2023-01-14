@@ -9,13 +9,8 @@ import ProfileHeader from "../../components/profile/header";
 const Profile = () => { 
     return (
         <Container>
-            <Header />
-            <LeftNav />
-            <CenterNav>
-                <ProfileHeader />
-                <ProfileBody/>
-            </CenterNav>
-            <RightNav/>
+            <ProfileHeader />
+            <ProfileBody/>
         </Container>
     )
 }

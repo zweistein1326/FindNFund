@@ -3,16 +3,13 @@ import CenterNav from "../../components/feed/centerNav";
 import LeftNav from "../../components/feed/leftNav";
 import Header from "../../components/header"
 import MessageList from "../../components/messages";
+import Notifications from "../../components/notifications";
 
-const Notifications = () => {
+const NotificationsPage = () => {
     return (
-        <Container>
-            <Header />
-            <LeftNav />
-            <CenterNav>
-                {/* <MessageList /> */}
-            </CenterNav>
+        <Container rightNav={false}>
+            <Notifications/>
         </Container>)
 }
 
-export default Notifications;
+export default NotificationsPage;
