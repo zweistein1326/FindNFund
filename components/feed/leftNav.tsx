@@ -10,6 +10,7 @@ const LeftNav = ({setIsMenuVisible = ()=>{}}:any) => {
     const tabs = [
         { title: 'Home', href: '/feed' },
         { title: 'Trending', href: '/trending' },
+        { title: 'Grants', href: '/grants' },
         { title: 'Profile', href: '/profile' },
         { title: 'Messages', href: '/messages' },
         { title: 'Notifications', href: '/notifications' },
