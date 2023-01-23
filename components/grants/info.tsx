@@ -4,7 +4,7 @@ import { users } from "../../dummydata/users";
 const GrantInfo = ({ selectedGrant }: any) => { 
     if (selectedGrant) {
         return (
-            <div style={{flex:1, boxShadow:'0px 0px 4px 4px rgba(0,0,0,0.2)', padding:'40px 20px', display:'flex', flexDirection:'column', justifyContent:'flex-start', height:'100%'}} >
+            <div style={{flex:1, padding:'40px 20px', display:'flex', flexDirection:'column', justifyContent:'flex-start', height:'100%'}} >
                 <h2>{selectedGrant.title}</h2>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>

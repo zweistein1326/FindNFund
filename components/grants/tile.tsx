@@ -1,15 +1,9 @@
 import { users } from "../../dummydata/users";
 
-const GrantTile = ({ grant, selectGrant}: any) => {
+const GrantTile = ({ grant, selectGrant, isSelected}: any) => {
     
-    const randomTime = () => {
-        const rand_num = Math.random();
-        const rand_time = rand_num * 100;
-        return Math.floor(rand_time);
-    }
-
     return (
-        <div style={{ width: '100%', height: '100px', background: 'rgba(30, 255, 147, 0.43)', boxShadow:'0px 0px 4px 4px rgba(0,0,0,0.05)', margin: "10px 0", display:'flex', flexDirection:'row', alignItems:'center', borderRadius:8, padding:'0px 16px'}} onClick={selectGrant}>
+        <div style={{ width: '100%', height: '100px', background: isSelected ? 'rgba(30, 255, 147, 0.43)' : '#FFF', boxShadow:'0px 0px 2px 2px rgba(0,0,0,0.05)', margin: "10px 0", display:'flex', flexDirection:'row', alignItems:'center', borderRadius:8, padding:'0px 16px', cursor:'pointer'}} onClick={selectGrant}>
             <img src={users[0].profile_image_url} style={{ height: 40, width: 40, borderRadius: 40, backgroundColor: '#FFF' }} />
             <div>
                 <p style={{fontSize:14, margin:'4px 8px'}}>{grant.title}</p>

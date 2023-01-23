@@ -19,7 +19,6 @@ const Register = () => {
                     <Link href="/login">Login</Link>
                 </div>
             </div>
-          
         </div>
   )
 }
