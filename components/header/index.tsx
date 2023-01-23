@@ -17,8 +17,8 @@ const Header = () => {
 
 const HeaderDesktop = () => {
     return (
-        <div style={{ position: 'fixed', display: 'flex', flexDirection: 'row', height: '8vh', width: '100vw', top: 0, alignItems: 'center', justifyContent: 'space-between', border:'0.2px solid rgba(0,0,0,0.05)', backgroundColor:'white', borderBottomLeftRadius:  0, borderBottomRightRadius: 0, zIndex:99999999}}>
-            <Link href="/feed" style={{width:'16.5%', textAlign:'center'}}>
+        <div style={{ position: 'fixed', display: 'flex', flexDirection: 'row', height: '8vh', width: '100vw', top: 0, alignItems: 'center', justifyContent: 'center', backgroundColor:'rgba(255,255,255,0,6)', borderBottomLeftRadius:  0, borderBottomRightRadius: 0, zIndex:99}}>
+            <Link href="/feed" style={{ width: '25vw', textAlign: 'center'}}>
                 <p style={{ paddingLeft: '80px' }}>Charitable</p>
             </Link>
             {/* Searchbar */}

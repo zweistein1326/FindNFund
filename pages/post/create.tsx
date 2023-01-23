@@ -1,21 +1,43 @@
 import { Input } from "@mui/material";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Container from "../../components/container";
-import Header from "../../components/header";
 import ImageIcon from '@mui/icons-material/Image';
-import { Cancel, CancelOutlined, Link, Videocam } from "@mui/icons-material";
+import { CancelOutlined, Videocam } from "@mui/icons-material";
+import PostContext from "../../hooks/posts-context";
+import { Post } from "../../dummydata/posts";
+import { useRouter } from "next/router";
 
 const CreatePost = () => { 
 
+    const router = useRouter();
     const [form, setForm] = useState<any>({
         assets: [],
         // link: '',
         text:''
     });
 
+    const { addPost } = useContext(PostContext);
+
     const inputImageRef: any = useRef();
     const inputVideoRef: any = useRef();
     // const inputLinkRef = useRef();
+
+    const submitPost = (e:any) => {
+        e?.preventDefault();
+        const post: Post = {
+            header: {
+                sender_id: '1',
+                timestamp: (new Date()).getTime()
+            },
+            info: form,
+            stats: {
+                likes: 0,
+                comments:0
+            }
+        }
+        addPost(post);
+        router.push('/feed');
+    }
 
     const removeAsset = (assetIndex: number) => {
         let new_assets = [];
@@ -31,6 +53,8 @@ const CreatePost = () => {
         console.log(new_assets)
         setForm({...form, assets:new_assets})
     }
+
+    
     return (
         <Container>
             <div style={{padding:'40px 40px', height:'4000px', width:'100%', paddingBottom:80}}>
@@ -46,7 +70,12 @@ const CreatePost = () => {
                                 <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width: 0 }} ref={inputImageRef} onChange={(e) => {
                                     if (e.target.files) {
                                         const files: any = e.target.files;
-                                        setForm({...form, assets: [...form.assets, ...files]})
+                                        let files_urls = []
+                                        for (let index = 0; index < files.length; index++) {
+                                            const file = files[index];
+                                            files_urls.push({uri: URL.createObjectURL(file)})
+                                        }
+                                        setForm({...form, assets: [...form.assets, ...files_urls]})
                                     }
                                 }}/>
                                 <ImageIcon onClick={() => {
@@ -57,7 +86,12 @@ const CreatePost = () => {
                                 <input type="file" multiple accept="image/*" placeholder="Images" style={{ marginTop: 12, width: 0 }} ref={inputVideoRef} onChange={(e) => {
                                     if (e.target.files) {
                                         const files: any = e.target.files;
-                                        setForm({ ...form, assets: [...form.assets, ...files] })
+                                        let files_urls = []
+                                        for (let index = 0; index < files.length; index++) {
+                                            const file = files[index];
+                                            files_urls.push({uri: URL.createObjectURL(file)})
+                                        }
+                                        setForm({...form, assets: [...form.assets, ...files_urls]})
                                     }
                                 }}/>
                                 <Videocam onClick={() => {
@@ -67,7 +101,7 @@ const CreatePost = () => {
                         </div>
                         <div className="action-buttons" style={{display:'flex', flexDirection:'row', alignItems:'flex-end', width:'100%', justifyContent:'flex-end', height:'100%'}}>
                             <p style={{padding:'10px 20px'}}>Draft</p>
-                            <p style={{padding:'10px 20px'}}>Post</p>
+                            <p style={{padding:'10px 20px', cursor:'pointer'}} onClick={submitPost}>Post</p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +140,7 @@ const AssetsPreview = ({ assets, removeAsset }: any) => {
 const AssetTile = ({ asset, removeAsset }: any) => {
     return <div style={{position:'relative', height:'200px', marginRight:4}}>
         <CancelOutlined style={{position:'absolute', top:10, right:10, color:'white'}} onClick={removeAsset} />
-        <img src={URL.createObjectURL(asset)} style={{ height: '200px', borderRadius: '8px'}} />
+        <img src={asset.uri} style={{ height: '200px', borderRadius: '8px'}} />
     </div>
 }
 export default CreatePost;

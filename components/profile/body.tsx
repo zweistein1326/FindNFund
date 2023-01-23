@@ -19,12 +19,12 @@ const ProfileBody = () => {
             </div>
             <div style={{margin:"24px 0"}}>
                 <h2>Activity</h2>  
-                <div style={{display:'flex', flexDirection:'row', width:'100%', justifyContent:'space-around', alignItems:'center'}}>
+                <div style={{display:'flex', flexDirection:'row', width:'100%', justifyContent:'space-around', alignItems:'flex-start'}}>
                     <div>
-                        {posts.slice(0,3).map((feed_item: any, index: number) => <FeedTile key={index} feed_item={feed_item} />)}  
+                        {posts.slice(0,3).map((post: any, index: number) => <FeedTile key={index} post={post} />)}  
                     </div>
                     <div>
-                        {posts.slice(3.6).map((feed_item: any, index: number) => <FeedTile key={index} feed_item={feed_item} />)}  
+                        {posts.slice(3.6).map((post: any, index: number) => <FeedTile key={index} post={post} />)}  
                     </div>
                 </div>
             </div>
