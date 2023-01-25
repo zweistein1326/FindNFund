@@ -21,7 +21,7 @@ const ActiveActions = ({ activeUser }: any) => {
         <div style={{ position:'relative'}}>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', cursor:'pointer'}} onClick={()=>{setIsDropdownActive(!isDropdownActive)}}>
                 <img src={activeUser.profile_image_url} style={{ height: 40, width: 40, borderRadius: 40, marginRight:4}} />
-                <Typography>{activeUser.username}</Typography>
+                <Typography>{activeUser.name}</Typography>
             </div>
             {isDropdownActive ? <Dropdown/> : null}
         </div>

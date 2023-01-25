@@ -7,7 +7,7 @@ const Register = () => {
           {/* HEADER */}
             <div style={{}}>
                 <div style={{padding:'20px 0'}}>
-                    <Input placeholder='Username'/>
+                    <Input placeholder='name'/>
                 </div>
                 <div style={{padding:'20px 0'}}>
                     <Input placeholder='Password'/>

@@ -61,7 +61,7 @@ const Results = () => {
                         <img alt='profile-image' src={user.profile_image_url} style={{ height: 60, width: 60}} />
                         <div style={{ margin: '0px 10px' }}>
                             <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                                <Typography style={{fontWeight:500}}>{user.username}</Typography>
+                                <Typography style={{fontWeight:500}}>{user.name}</Typography>
                                 <VerifiedUser style={{ fontSize:18, marginLeft:4 }} color='primary' />
                             </div>
                             <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>Education, Literacy, Employment</Typography>
