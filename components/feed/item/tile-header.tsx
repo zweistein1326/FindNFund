@@ -14,7 +14,7 @@ const TileHeader = ({ sender, post }: any) => {
                         {hoverVerify ? <VerifyToolTip/> : null}
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, padding: 0, paddingBottom: 0 }}>
                             <Link href="/profile">
-                                <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{sender.username}</p> 
+                                <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{sender.name}</p> 
                         </Link>
                         <div onMouseEnter={(e) => { setHoverVerify(true) }} onMouseLeave={(e) => { setHoverVerify(false) }} style={{paddingRight:20, paddingLeft:4, display:'flex', justifyContent:'center'}}>
                                 <VerifiedUser style={{ fontSize: 18}} color='primary' />

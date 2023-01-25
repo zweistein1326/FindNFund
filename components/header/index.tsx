@@ -1,5 +1,5 @@
 import { Close, Menu } from "@mui/icons-material";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import { users } from "../../dummydata/users";
@@ -19,7 +19,7 @@ const HeaderDesktop = () => {
     return (
         <div style={{ position: 'fixed', display: 'flex', flexDirection: 'row', height: '8vh', width: '100vw', top: 0, alignItems: 'center', justifyContent: 'center', backgroundColor:'rgba(255,255,255,0,6)', borderBottomLeftRadius:  0, borderBottomRightRadius: 0, zIndex:99}}>
             <Link href="/feed" style={{ width: '25vw', textAlign: 'center'}}>
-                <p style={{ paddingLeft: '80px' }}>Charitable</p>
+                <Typography style={{ paddingLeft: '80px' }}>Charitable</Typography>
             </Link>
             {/* Searchbar */}
             <Searchbar/>
