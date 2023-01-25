@@ -1,7 +1,7 @@
 import { VerifiedUser } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { users } from "../../dummydata/users";
-import FeedTile from "../feed/tile";
+import FeedTile from "../feed/item/tile";
 import { posts } from "../../dummydata/posts";
 
 const SearchResults = () => {
@@ -12,6 +12,8 @@ const SearchResults = () => {
         </div>
     )
 }
+
+export default SearchResults;
 
 const SearchHeader = () => {
     const searchFIelds = ['Nonprofits', 'People', 'Posts']
@@ -56,7 +58,7 @@ const Results = () => {
                 <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8 }}>
                     <Typography style={{fontSize:20, fontWeight:600}}>Nonprofits</Typography>
                     <div style={{margin:'20px 0', display:'flex', flexDirection:'row', alignItems:'flex-start'}}>
-                        <img src={user.profile_image_url} style={{ height: 60, width: 60}} />
+                        <img alt='profile-image' src={user.profile_image_url} style={{ height: 60, width: 60}} />
                         <div style={{ margin: '0px 10px' }}>
                             <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                 <Typography style={{fontWeight:500}}>{user.username}</Typography>
@@ -76,7 +78,7 @@ const Results = () => {
                 <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, background:'#FFF', width:'100%'}}>
                     <Typography style={{fontSize:20, fontWeight:600}}>Posts</Typography>
                     <div style={{margin:'20px 0', display:'flex', flexDirection:'row', alignItems:'flex-start', justifyContent:'center', width:'100%'}}>
-                        {posts.slice(0,2).map((feed_item: any, index: number) => <FeedTile key={index} feed_item={feed_item} />)} 
+                        {posts.slice(0,2).map((post: any, index: number) => <FeedTile key={index} post={post} />)} 
                     </div>
                 </div>
             </div>
@@ -113,5 +115,3 @@ const PeopleTile = ({person}:any) => {
         </div>
     )
 }
-
-export default SearchResults;

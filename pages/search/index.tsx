@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import Container from "../../components/container";
 import SearchResults from "../../components/search/results";
 

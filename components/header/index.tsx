@@ -3,7 +3,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import { users } from "../../dummydata/users";
-import LeftNav from "../feed/leftNav";
+import LeftNav from "../container/leftNav";
 import Actions from "./actions";
 import Searchbar from "./searchbar";
 

@@ -16,7 +16,8 @@ const Modal = () => {
                     <Typography sx={{marginBottom:'16px', textAlign:'center', fontSize:{lg:'20px', md:'20px', sm:'16px', xs:'16px'}}}>You need to be a verified member to apply for grants</Typography>
                     <Button onClick={(e) => {
                         e?.preventDefault();
-                        router.push('/verify')
+                        toggleModal();
+                        router.push('/verify');
                     }}>Become a verified member</Button>
                 </Box>
             </Box>

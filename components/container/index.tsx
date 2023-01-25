@@ -1,7 +1,7 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-import CenterNav from "../feed/centerNav";
-import LeftNav from "../feed/leftNav";
-import RightNav from "../feed/rightNav";
+import CenterNav from "./centerNav";
+import LeftNav from "./leftNav";
+import RightNav from "./rightNav";
 import Header from "../header";
 
 const Container = ({ children, rightNav = true }: any) => { 

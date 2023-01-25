@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Post } from "../../dummydata/posts";
 import PostContext from "../../hooks/posts-context";
-import FeedTile from "./tile";
+import FeedTile from "./item/tile";
 
 const Feed = () => { 
     const {posts} = useContext(PostContext);

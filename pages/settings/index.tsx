@@ -1,6 +1,6 @@
 import Container from "../../components/container";
-import CenterNav from "../../components/feed/centerNav";
-import LeftNav from "../../components/feed/leftNav";
+import CenterNav from "../../components/container/centerNav";
+import LeftNav from "../../components/container/leftNav";
 import Header from "../../components/header";
 
 const Settings = () => {

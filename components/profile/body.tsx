@@ -1,6 +1,6 @@
 import { posts } from "../../dummydata/posts";
 import { users } from "../../dummydata/users";
-import FeedTile from "../feed/tile";
+import FeedTile from "../feed/item/tile";
 
 const ProfileBody = () => { 
     const dummy_members = ['https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'];
