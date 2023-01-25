@@ -48,7 +48,10 @@ const Who2Follow = () => {
     }
     return (
         <div style={{ width: '100%' }}>
-            <Typography variant="h6" style={{padding:'12px 0', fontWeight:'bold'}}>Who to follow?</Typography>
+            <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight:40}}>
+                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold' }}>Who to follow?</Typography>
+                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold', fontSize: 14, color: '#0066FF' }}>More ></Typography>
+            </div>
             {users.map((user, index) => <FollowTile user={user} key={index} />)}
         </div>
     )

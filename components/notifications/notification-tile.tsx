@@ -3,7 +3,7 @@ import { users } from "../../dummydata/users"
 
 const NotificationTile = ({ notification }: any) => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width:'100%', margin:'4px 0', padding:'12px 12px', background: !notification.read ? '#73FFBC' : '#FFF', borderTop: notification.read ? '0.2px solid #000000' : ''}}>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width:'100%', margin:'4px 0', padding:'12px 12px', background: !notification.read ? 'rgba(0, 102, 255, 0.5)' : '#FFF', borderTop: notification.read ? '0.2px solid #000000' : ''}}>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                 <img src={users[0].profile_image_url} style={{ height: 40, width: 40, borderRadius: 20, marginRight:8, background:'#FFF' }} />
                 <p>{notification.subtitle}</p>
