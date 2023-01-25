@@ -14,7 +14,7 @@ import { Typography } from "@mui/material";
 const FeedTile = (props: any) => {
 
     const post: Post = props.post;
-    const sender = users[Number(post.header.sender_id)];
+    const sender = users[Number(post.header.sender_id) - 1];
     console.log(post, sender);
 
     return (
@@ -23,7 +23,7 @@ const FeedTile = (props: any) => {
             <TileHeader sender={sender} post={post} />
             {/* INFO */}
             <div>
-                <Typography style={{padding:"0px 8px", fontSize:'14px'}}>{post.info.text}</Typography>
+                <Typography style={{ padding: "0px 8px", fontSize: '14px', marginBottom:8 }}>{post.info.text.slice(0, 198)}{post.info.text.length > 150 ? <span style={{ color: '#000' }}>... <span style={{ color: '#0066FF' }}>Read</span></span> : null}</Typography>
                 {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
             </div>
             {/* STATS */}

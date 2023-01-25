@@ -5,12 +5,19 @@ import { useState } from 'react';
 import PostContext from '../hooks/posts-context';
 import ModalContext from '../hooks/modal-context';
 import Modal from '../components/modal';
+import LoginContext from '../hooks/login-context';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [posts, setPosts] = useState(newsFeedItems);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalInfo, setModalInfo] = useState({isVerified:false});
+  const [modalInfo, setModalInfo] = useState({ isVerified: false });
+  const [user_id, setUserId] = useState('');
   return (
+    <LoginContext.Provider value={{
+      user_id: user_id,
+      login: () => {setUserId('1')},
+      logout: () => {setUserId('')}
+    }}>
     <PostContext.Provider value={{
       posts: posts,
       addPost: (post: any)=>{setPosts([post, ...posts])},
@@ -25,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {isModalVisible ? <Modal /> : null}
         <Component {...pageProps} />
       </ModalContext.Provider>
-    </PostContext.Provider>
+      </PostContext.Provider>
+    </LoginContext.Provider>
   )
 }

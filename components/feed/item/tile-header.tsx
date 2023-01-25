@@ -1,6 +1,7 @@
 import { VerifiedUser } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const TileHeader = ({ sender, post }: any) => { 
@@ -45,6 +46,8 @@ const TileHeader = ({ sender, post }: any) => {
         return string;
     }
 
+    const router = useRouter();
+
     return (
         <div className="sender_info" style={{ padding: 10, margin: 4, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             
@@ -54,10 +57,10 @@ const TileHeader = ({ sender, post }: any) => {
                         {hoverVerify ? <VerifyToolTip/> : null}
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, padding: 0, paddingBottom: 0 }}>
                             <Link href="/profile">
-                                <Typography style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{sender.name}</Typography> 
+                                <Typography style={{ margin: 0, fontSize: 16, fontWeight: 500 }}>{sender.name}</Typography> 
                         </Link>
                         <div onMouseEnter={(e) => { setHoverVerify(true) }} onMouseLeave={(e) => { setHoverVerify(false) }} style={{paddingRight:20, paddingLeft:4, display:'flex', justifyContent:'center'}}>
-                                <VerifiedUser style={{ fontSize: 18}} color='primary' />
+                            <VerifiedUser onClick={(e) => { e.preventDefault(); router.push('verify')}} style={{ fontSize: 18, cursor:'pointer'}} color='primary' />
                             </div>
                         </div>
                         <Typography style={{margin:0, fontSize:12}}><span style={{fontWeight:600}}>{calculatePostTime()}</span> ago | <span style={{fontWeight:600}}>19k</span> views</Typography>

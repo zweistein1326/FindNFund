@@ -6,6 +6,7 @@ import { CancelOutlined, Videocam } from "@mui/icons-material";
 import PostContext from "../../hooks/posts-context";
 import { Post } from "../../dummydata/posts";
 import { useRouter } from "next/router";
+import LoginContext from "../../hooks/login-context";
 
 const CreatePost = () => { 
 
@@ -17,6 +18,7 @@ const CreatePost = () => {
     });
 
     const { addPost } = useContext(PostContext);
+    const { user_id } = useContext(LoginContext);
 
     const inputImageRef: any = useRef();
     const inputVideoRef: any = useRef();
@@ -26,7 +28,7 @@ const CreatePost = () => {
         e?.preventDefault();
         const post: Post = {
             header: {
-                sender_id: '1',
+                sender_id: user_id,
                 timestamp: (new Date()).getTime()
             },
             info: form,
