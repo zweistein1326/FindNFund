@@ -20,7 +20,7 @@ const RightNav = () => {
     return (
         <div style={{ height: '100vh', width: '22%', padding: '40px 40px' }}>
             {/* <Filters /> */}
-            <RightNav1 />
+            <Fundraisers />
             <Who2Follow />
         </div>
     )
@@ -65,7 +65,22 @@ const Filters = () => {
     )
 }
 
-const RightNav1 = () => {
+const Fundraisers = () => {
+
+    const TrendingItem = ({item}: any) => { 
+        return (
+            <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row',}}>
+                <img src={users[0].profile_image_url} style={{ height: 30, width: 30 }} />
+                <div style={{ margin: '0 12px' }}>
+                    <div style={{display:'flex', flexDirection:'row', alignItems:'center', marginBottom:6}}>
+                        <Typography style={{ fontWeight: 600, fontSize: 14, marginRight: 4}}>{users[0].name}</Typography>
+                        <VerifiedUser color='primary' style={{fontSize:16}} />
+                    </div>
+                    <Typography style={{fontWeight:400, fontSize:16}}>{item}</Typography>
+                </div>
+            </div>
+        )
+    }
 
     const trending = ['Save 40 blind girls from becoming homeless', 'Rescue girls kidnapped and sold into brothels', 'Safe infant orphans with urgent life-saving care', 'Rescue young girls from sex trafficiking and forced prostitution', 'Covid-19 Relief'];
 
@@ -76,21 +91,6 @@ const RightNav1 = () => {
             {trending.map((item, index) => {
                 return (<TrendingItem item={item} key={index} />);
             })}
-        </div>
-    )
-}
-
-const TrendingItem = ({item}: any) => { 
-    return (
-        <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row',}}>
-            <img src={users[0].profile_image_url} style={{ height: 30, width: 30 }} />
-            <div style={{ margin: '0 12px' }}>
-                <div style={{display:'flex', flexDirection:'row', alignItems:'center', marginBottom:6}}>
-                    <Typography style={{ fontWeight: 600, fontSize: 14, marginRight: 4}}>{users[0].name}</Typography>
-                    <VerifiedUser color='primary' style={{fontSize:16}} />
-                </div>
-                <Typography style={{fontWeight:400, fontSize:16}}>{item}</Typography>
-            </div>
         </div>
     )
 }
