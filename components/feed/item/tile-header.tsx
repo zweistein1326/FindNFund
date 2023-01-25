@@ -5,6 +5,46 @@ import { useState } from "react";
 
 const TileHeader = ({ sender, post }: any) => { 
     const [hoverVerify, setHoverVerify] = useState(false);
+
+    const calculatePostTime = () => {
+        
+        const post_time = new Date(post.header.timestamp);
+        const current_time = new Date();
+        console.log(post.header.timestamp, current_time.getTime())
+        // const difference = Math.ceil((current_time - post_time)/1000);
+        // console.log(difference, 'difference');
+        let string = '';
+        
+        let difference_in_secs = current_time.getSeconds() - post_time.getSeconds();
+        difference_in_secs = difference_in_secs > 0 ? difference_in_secs : 60 - difference_in_secs;
+
+        let difference_in_minutes = difference_in_secs >= 0 ? current_time.getMinutes() - post_time.getMinutes() : current_time.getMinutes() - post_time.getMinutes() - 1;
+        difference_in_minutes = difference_in_minutes >= 0 ? difference_in_minutes : 60 - difference_in_minutes;
+        
+        let difference_in_hours = difference_in_minutes ? current_time.getHours() - post_time.getHours() : current_time.getHours() - post_time.getHours() - 1;
+        difference_in_hours = difference_in_hours >= 0 ? difference_in_hours : 24 - difference_in_hours;
+        
+        let difference_in_days = difference_in_hours >= 0 ? current_time.getDate() - post_time.getDate() : current_time.getDate() - post_time.getDate() - 1;
+
+        if (difference_in_days > 0) {
+            string += `${difference_in_days}days`;
+        }
+        else {
+            if (difference_in_hours > 0) {
+                string += `${difference_in_hours}hrs`;
+            }
+            else {
+                if (difference_in_minutes > 0) {
+                    string += `${difference_in_minutes}mins`;
+                }
+                else {
+                    string += `${difference_in_secs}secs`;
+                }
+            }
+        }
+        return string;
+    }
+
     return (
         <div className="sender_info" style={{ padding: 10, margin: 4, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             
@@ -14,13 +54,13 @@ const TileHeader = ({ sender, post }: any) => {
                         {hoverVerify ? <VerifyToolTip/> : null}
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, padding: 0, paddingBottom: 0 }}>
                             <Link href="/profile">
-                                <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{sender.name}</p> 
+                                <Typography style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{sender.name}</Typography> 
                         </Link>
                         <div onMouseEnter={(e) => { setHoverVerify(true) }} onMouseLeave={(e) => { setHoverVerify(false) }} style={{paddingRight:20, paddingLeft:4, display:'flex', justifyContent:'center'}}>
                                 <VerifiedUser style={{ fontSize: 18}} color='primary' />
                             </div>
                         </div>
-                        <p style={{margin:0, fontSize:12}}>{new Date(post.header.timestamp).toLocaleDateString()}</p>
+                        <Typography style={{margin:0, fontSize:12}}><span style={{fontWeight:600}}>{calculatePostTime()}</span> ago | <span style={{fontWeight:600}}>19k</span> views</Typography>
                     </div>
                 </div>
             

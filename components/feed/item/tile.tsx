@@ -9,6 +9,7 @@ import Like from "./stats/like";
 import Comment from "./stats/comment";
 import Share from "./stats/share";
 import TileHeader from "./tile-header";
+import { Typography } from "@mui/material";
 
 const FeedTile = (props: any) => {
 
@@ -22,7 +23,7 @@ const FeedTile = (props: any) => {
             <TileHeader sender={sender} post={post} />
             {/* INFO */}
             <div>
-                <p style={{padding:"0px 8px", fontSize:'14px'}}>{post.info.text}</p>
+                <Typography style={{padding:"0px 8px", fontSize:'14px'}}>{post.info.text}</Typography>
                 {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
             </div>
             {/* STATS */}

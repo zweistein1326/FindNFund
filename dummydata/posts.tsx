@@ -25,7 +25,7 @@ export const posts: Post[] = [
     {
         header: {
             sender_id: '1',
-            timestamp: 180291029
+            timestamp: 1674650553000
         },
         info: {
             text: 'We are raising funds for sponsoring 3 bright students who have showed high caliber in the fields of science and technology. Read More',
@@ -39,7 +39,7 @@ export const posts: Post[] = [
     {
         header: {
             sender_id: '2',
-            timestamp: 180291029
+            timestamp: 1674650553000
         },
         info: {
             text: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
@@ -53,7 +53,7 @@ export const posts: Post[] = [
     {
         header: {
             sender_id: '2',
-            timestamp: 180291029
+            timestamp: 1674650553000
         },
         info: {
             text: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
@@ -66,7 +66,7 @@ export const posts: Post[] = [
     },{
         header: {
             sender_id: '2',
-            timestamp: 180291029
+            timestamp: 1674650553000
         },
         info: {
             text: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',
@@ -79,7 +79,7 @@ export const posts: Post[] = [
     },{
         header: {
             sender_id: '2',
-            timestamp: 180291029
+            timestamp: 1674650553000
         },
         info: {
             text: 'At our Library cum Creativity Centres children get a space to indulge themselves in beautifully illustrated story books Read More',

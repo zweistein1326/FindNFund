@@ -68,12 +68,13 @@ const Filters = () => {
 const Fundraisers = () => {
 
     const TrendingItem = ({item}: any) => { 
+        const randomNum = Math.floor(Math.random() * 3);
         return (
             <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row',}}>
-                <img src={users[0].profile_image_url} style={{ height: 30, width: 30 }} />
+                <img src={users[randomNum].profile_image_url} style={{ height: 30, width: 30 }} />
                 <div style={{ margin: '0 12px' }}>
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center', marginBottom:6}}>
-                        <Typography style={{ fontWeight: 600, fontSize: 14, marginRight: 4}}>{users[0].name}</Typography>
+                        <Typography style={{ fontWeight: 600, fontSize: 14, marginRight: 4}}>{users[randomNum].name}</Typography>
                         <VerifiedUser color='primary' style={{fontSize:16}} />
                     </div>
                     <Typography style={{fontWeight:400, fontSize:16}}>{item}</Typography>
