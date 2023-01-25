@@ -17,7 +17,7 @@ const Header = () => {
 
 const HeaderDesktop = () => {
     return (
-        <div style={{ position: 'fixed', display: 'flex', flexDirection: 'row', height: '8vh', width: '100vw', top: 0, alignItems: 'center', justifyContent: 'center', backgroundColor:'rgba(255,255,255,0,6)', borderBottomLeftRadius:  0, borderBottomRightRadius: 0, zIndex:99}}>
+        <div style={{ position: 'fixed', display: 'flex', flexDirection: 'row', height: '8vh', width: '100vw', top: 0, alignItems: 'center', justifyContent: 'center', backgroundColor:'rgba(255,255,255,1)', borderBottomLeftRadius:  0, borderBottomRightRadius: 0, zIndex:99}}>
             <Link href="/feed" style={{ width: '25vw', textAlign: 'center'}}>
                 <Typography style={{ paddingLeft: '80px' }}>Charitable</Typography>
             </Link>
