@@ -1,9 +1,8 @@
 import { VerifiedUser } from "@mui/icons-material";
 import { Button, Input, Radio, Typography } from "@mui/material";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { posts } from "../../dummydata/posts";
-import { users } from "../../dummydata/users";
+import { useContext, useEffect } from "react";
+import UsersContext from "../../hooks/users-context-provider";
 
 const RightNav = () => { 
 
@@ -29,6 +28,8 @@ const RightNav = () => {
 
 const Who2Follow = () => {
 
+    const {users, updateUser} = useContext(UsersContext);
+
     const FollowTile = ({user}: any) => {
         return (
             <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row'}}>
@@ -42,10 +43,12 @@ const Who2Follow = () => {
                     </div>
                     <Typography style={{ fontWeight: 400, fontSize: 12, marginRight: 4 }}>@{user.username} | {user.followers} followers</Typography>
                 </div>
-                <Button style={{backgroundColor:'#0066FF', height:40, flex:1, borderRadius:20, padding:'8px 12px', color:'#FFF', fontSize:14, textTransform:'capitalize'}}>Follow</Button>
+                {!user.following ? <Button style={{ backgroundColor: '#0066FF', height: 40, flex: 1, borderRadius: 20, padding: '8px 12px', color: '#FFF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => { updateUser({...user, following:true})}}>Follow</Button> :
+                <Button style={{border:'1px solid #0066FF', backgroundColor:'#FFF', height:40, flex:1, borderRadius:20, padding:'8px 12px', color:'#0066FF', fontSize:14, textTransform:'capitalize'}}  onClick={() => { updateUser({...user, following:false})}}>Unfollow</Button>}
             </div>
         )
     }
+
     return (
         <div style={{ width: '100%' }}>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight:40}}>
@@ -96,6 +99,8 @@ const Filters = () => {
 }
 
 const Fundraisers = () => {
+
+    const {users} = useContext(UsersContext);
 
     const TrendingItem = ({item}: any) => { 
         const randomNum = Math.floor(Math.random() * 3);

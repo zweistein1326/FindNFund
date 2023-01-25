@@ -1,8 +1,10 @@
 import { VerifiedUser } from "@mui/icons-material";
-import { Typography } from "@mui/material";
-import { users } from "../../dummydata/users";
+import { Button, Typography } from "@mui/material";
 import FeedTile from "../feed/item/tile";
 import { posts } from "../../dummydata/posts";
+import { useContext } from "react";
+import UsersContext from "../../hooks/users-context-provider";
+import { useRouter } from "next/router";
 
 const SearchResults = () => {
     return (
@@ -11,7 +13,7 @@ const SearchResults = () => {
             <Results/>
         </div>
     )
-}
+} 
 
 export default SearchResults;
 
@@ -28,7 +30,9 @@ const SearchHeader = () => {
 }
 
 const Results = () => {
+    const { users, updateUser } = useContext(UsersContext);
     const user = users[0];
+    const router = useRouter();
     const people = [
         {
             name: 'Pravin Bhasin',
@@ -57,20 +61,21 @@ const Results = () => {
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20 }}>
                 <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8 }}>
                     <Typography style={{fontSize:20, fontWeight:600}}>Nonprofits</Typography>
-                    <div style={{margin:'20px 0', display:'flex', flexDirection:'row', alignItems:'flex-start'}}>
-                        <img alt='profile-image' src={user.profile_image_url} style={{ height: 60, width: 60}} />
-                        <div style={{ margin: '0px 10px' }}>
-                            <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                                <Typography style={{fontWeight:500}}>{user.name}</Typography>
-                                <VerifiedUser style={{ fontSize:18, marginLeft:4 }} color='primary' />
+                    <div style={{ margin: '20px 0', display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
+                        <div style={{display: 'flex', flexDirection: 'row', cursor:'pointer'}} onClick={()=>{router.push('/profile')}}>
+                            <img alt='profile-image' src={user.profile_image_url} style={{ height: 60, width: 60}} />
+                            <div style={{ margin: '0px 10px' }}>
+                                <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                                    <Typography style={{fontWeight:500}}>{user.name}</Typography>
+                                    <VerifiedUser style={{ fontSize:18, marginLeft:4 }} color='primary' />
+                                </div>
+                                <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>Education, Literacy, Employment</Typography>
+                                <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>20K followers</Typography>
+                                <Typography style={{fontSize:14, fontWeight:400, color:'#555'}}><span style={{fontWeight:600, color:'#000'}}>Books for All</span>{user.about?.slice(13,252)} ...</Typography>
                             </div>
-                            <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>Education, Literacy, Employment</Typography>
-                            <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>20K followers</Typography>
-                            <Typography style={{fontSize:14, fontWeight:400, color:'#555'}}><span style={{fontWeight:600, color:'#000'}}>Books for All</span>{user.about?.slice(13,252)} ...</Typography>
                         </div>
-                        <div style={{ padding: '8px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 30 }}>
-                            <Typography>Follow</Typography>
-                        </div>
+                        {!user.following ? <Button style={{ backgroundColor: '#0066FF', height: 40, borderRadius: 20, padding: '8px 30px', color: '#FFF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => { updateUser({...user, following:true})}}>Follow</Button> :
+                        <Button style={{border:'1px solid #0066FF', backgroundColor:'#FFF', height:40, borderRadius:20, padding:'8px 30px', color:'#0066FF', fontSize:14, textTransform:'capitalize'}}  onClick={() => { updateUser({...user, following:false})}}>Unfollow</Button>}
                     </div>
                 </div>
             </div>
@@ -101,12 +106,10 @@ const PeopleTile = ({person}:any) => {
                 <div style={{ margin: '0px 10px' }}>
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Typography style={{fontWeight:500}}>{person.name}</Typography>
-                        {/* <VerifiedUser style={{ fontSize:18, marginLeft:4 }} color='primary' /> */}
                     </div>
-                    <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>Founder & President</Typography>
+                    <Typography style={{ fontSize: 14, fontWeight: 400, color: '#777' }}>{person.role}</Typography>
                     <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>Books for All, India</Typography>
-                    <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>20K followers</Typography>
-                    {/* <Typography style={{fontSize:14, fontWeight:400, color:'#555'}}><span style={{fontWeight:600, color:'#000'}}>Pravin Bhasin</span>{user.about?.slice(13,252)} ...</Typography> */}
+                    <Typography style={{fontSize:14, fontWeight:400, color:'#777'}}>{person.followers} followers</Typography>
                 </div>
             </div>
             <div style={{ padding: '8px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 30 }}>

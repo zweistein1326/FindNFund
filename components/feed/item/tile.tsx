@@ -23,7 +23,7 @@ const FeedTile = (props: any) => {
             <TileHeader sender={sender} post={post} />
             {/* INFO */}
             <div>
-                <Typography style={{ padding: "0px 8px", fontSize: '14px', marginBottom:8 }}>{post.info.text.slice(0, 198)}{post.info.text.length > 150 ? <span style={{ color: '#000' }}>... <span style={{ color: '#0066FF' }}>Read</span></span> : null}</Typography>
+                <Typography style={{ padding: "0px 8px", fontSize: '15px', marginBottom:8 }}>{post.info.text.slice(0, 198)}{post.info.text.length > 150 ? <span style={{ color: '#000' }}>... <span style={{ color: '#0066FF' }}>Read</span></span> : null}</Typography>
                 {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
             </div>
             {/* STATS */}
