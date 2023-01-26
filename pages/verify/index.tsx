@@ -36,7 +36,7 @@ const VerificationPage = () => {
                                 <ul>
                                     <li><Typography style={{fontSize:20, fontWeight:500, marginBottom:12}}>Apply for grants from any part of the world.</Typography></li>
                                     <li><Typography style={{fontSize:20, fontWeight:500, marginBottom:12}}>Create fundraisers to raise funds for your social good organization</Typography></li>
-                                    <li><Typography style={{fontSize:20, fontWeight:500, marginBottom:12}}>Add team members to your organization's profile page.</Typography></li>
+                                    <li><Typography style={{fontSize:20, fontWeight:500, marginBottom:12}}>Add team members to your {`organization's`} profile page.</Typography></li>
                                     <li><Typography style={{fontSize:20, fontWeight:500, marginBottom:12}}>Send unlimited messages per day</Typography></li>
                                 </ul>
                             </div>
