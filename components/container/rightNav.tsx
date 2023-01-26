@@ -53,7 +53,7 @@ const Who2Follow = () => {
         <div style={{ width: '100%' }}>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight:40}}>
                 <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold' }}>Who to follow?</Typography>
-                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold', fontSize: 14, color: '#0066FF' }}>More ></Typography>
+                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold', fontSize: 14, color: '#0066FF' }}>{`More >`}</Typography>
             </div>
             {users.map((user, index) => <FollowTile user={user} key={index} />)}
         </div>
@@ -124,7 +124,7 @@ const Fundraisers = () => {
         <div style={{ width: '100%', marginBottom: 20 }}>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight:40}}>
                 <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold' }}>Ongoing Fundraisers</Typography>
-                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold', fontSize:14, color:'#0066FF'}}>More ></Typography>
+                <Typography variant="h6" style={{ padding: '12px 0', fontWeight: 'bold', fontSize:14, color:'#0066FF'}}>{`More >`}</Typography>
             </div>
             {/* <>List of groups, user might be interested in based on behaviour</> */}
             {trending.map((item, index) => {
