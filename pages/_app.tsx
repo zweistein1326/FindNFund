@@ -24,7 +24,7 @@ export default function App(props: MyAppProps) {
   const [posts, setPosts] = useState(newsFeedItems);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalInfo, setModalInfo] = useState({ isVerified: false });
-  const [user_id, setUserId] = useState('');
+  const [user_id, setUserId] = useState('1');
   const [users, setUsers] = useState(appUsers);
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

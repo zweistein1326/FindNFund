@@ -81,8 +81,8 @@ const Results = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20, flex:1}}>
                 <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, background:'#FFF', width:'100%'}}>
-                    <Typography style={{fontSize:20, fontWeight:600}}>Posts</Typography>
-                    <div style={{margin:'20px 0', display:'flex', flexDirection:'row', alignItems:'flex-start', justifyContent:'center', width:'100%'}}>
+                    <Typography style={{fontSize:20, fontWeight:600}}>Activity</Typography>
+                    <div style={{margin:'20px 0', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:'100%'}}>
                         {posts.slice(0,2).map((post: any, index: number) => <FeedTile key={index} post={post} />)} 
                     </div>
                 </div>

@@ -19,7 +19,7 @@ const FeedTile = (props: any) => {
     console.log(post, sender);
 
     return (
-        <div style={{ padding: '8px 20px', boxShadow: '0px 0px 4px 4px rgba(0,0,0,0.05)', borderRadius: 20, margin: '16px 12px', width:'80%' }}>
+        <div style={{ padding: '8px 20px', boxShadow: '0px 0px 4px 4px rgba(0,0,0,0.05)', borderRadius: 20, margin: '16px 0px', width:'90%' }}>
             {/* HEADER */}
             <TileHeader sender={sender} post={post} />
             {/* INFO */}
