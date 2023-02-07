@@ -16,12 +16,14 @@ const RightNav = () => {
     ]);
 
     return (
-        router.pathname == '/feed'  ? <div style={{ height: '100vh', width: '22%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
-            <Fundraisers />
-            <Who2Follow />
-        </div> : <div style={{ height: '100vh', width: '22%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
+        router.pathname == '/feed'  ? <div style={{ height: '100vh', width: '25%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
             <Filters />
-            <Fundraisers />
+            <Who2Follow />
+            {/* <Fundraisers /> */}
+        </div> : <div style={{ height: '100vh', width: '25%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
+            <Filters />
+            <Who2Follow />
+            {/* <Fundraisers /> */}
         </div>
     )
 }

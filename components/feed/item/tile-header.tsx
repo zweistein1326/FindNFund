@@ -1,8 +1,9 @@
 import { VerifiedUser } from "@mui/icons-material";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UsersContext from "../../../hooks/users-context-provider";
 
 const TileHeader = ({ sender, post }: any) => { 
     const [hoverVerify, setHoverVerify] = useState(false);
@@ -48,8 +49,9 @@ const TileHeader = ({ sender, post }: any) => {
 
     const router = useRouter();
 
+    const { updateUser } = useContext(UsersContext);  
     return (
-        <div className="sender_info" style={{ padding: 10, margin: 4, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="sender_info" style={{ padding: 10, margin: 4, display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between'}}>
             
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                     <img src={sender.profile_image_url} style={{ height: 40, width: 40 }} />
@@ -64,9 +66,11 @@ const TileHeader = ({ sender, post }: any) => {
                             </div>
                         </div>
                         <Typography style={{margin:0, fontSize:12}}><span style={{fontWeight:600}}>{calculatePostTime()}</span> ago | <span style={{fontWeight:600}}>19k</span> views</Typography>
+                        <Typography style={{fontSize:12}}>#Education</Typography>
                     </div>
-                </div>
-            
+            </div>
+            {1 == 1? <Button style={{ backgroundColor: '#FFF', height: 40, borderRadius: 20, padding: '8px 12px', color: '#FFF', border:'1px solid #0066FF', color:'#0066FF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => {}}>+ Follow</Button> :
+            null}
         </div>
     );
 }

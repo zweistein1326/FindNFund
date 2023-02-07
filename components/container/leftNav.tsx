@@ -12,7 +12,7 @@ const LeftNav = ({setIsMenuVisible = ()=>{}}:any) => {
     const tabs = [
         { title: 'Home', href: '/feed', icon: <Home style={{ color: router.pathname === '/feed' ? '#FFF' : '#000' }} />},
         { title: 'Trending', href: '/trending' , icon:<TrendingUp style={{ color: router.pathname === '/trending' ? '#FFF' : '#000' }}/>},
-        { title: 'Grants', href: '/grants' , icon:<Support style={{ color: router.pathname === '/grants' ? '#FFF' : '#000' }}/>},
+        // { title: 'Grants', href: '/grants' , icon:<Support style={{ color: router.pathname === '/grants' ? '#FFF' : '#000' }}/>},
         { title: 'Profile', href: '/profile', icon: <img src={users[0].profile_image_url} style={{height:24, width:24, background:'#FFF'}} alt="profile-image" />},
         { title: 'Messages', href: '/messages' , icon:<ChatBubble style={{ color: router.pathname === '/messages' ? '#FFF' : '#000' }}/>},
         { title: 'Notifications', href: '/notifications' , icon:<Notifications style={{ color: router.pathname === '/notifications' ? '#FFF' : '#000' }}/>},
@@ -20,7 +20,7 @@ const LeftNav = ({setIsMenuVisible = ()=>{}}:any) => {
 
     const Top = () => {
         return (
-            <div style={{height:'40vh', width:'70%',}}>
+            <div style={{height:'40vh', width:'100%',}}>
                 {/* <p style={{fontSize:12, paddingLeft:24}}>Feeds</p> */}
                 {tabs.map((tab, index) =>
                     <div key={index} style={{backgroundColor: router.pathname===tab.href ? '#0066FF' : 'white', height:'50px', padding:'0px 20px', display:'flex', alignItems:'center', justifyContent:'flex-start', marginBottom:12}}>
@@ -38,7 +38,7 @@ const LeftNav = ({setIsMenuVisible = ()=>{}}:any) => {
     console.log(mdOrSmaller);
 
     return (
-        <div style={{margin:0, paddingRight: 40, padding:'0px 0px', width:mdOrSmaller ? '80vw' : '25vw', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'flex-end'}}>
+        <div style={{margin:0, paddingRight: 40, padding:'0px 0px', width:mdOrSmaller ? '80vw' : '12vw', display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-end'}}>
             <Top />
         </div>
     )

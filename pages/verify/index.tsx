@@ -7,8 +7,8 @@ const VerificationPage = () => {
         {
             id: '1',
             title: '1 year subscription',
-            price:'HK$250',
-            discounted_price:'HK$50'
+            price:'HK$180',
+            discounted_price:'HK$36'
         },
         {
             id: '2',
@@ -19,8 +19,8 @@ const VerificationPage = () => {
         {
             id: '3',
             title: '1 month subscription',
-            price:'HK$180',
-            discounted_price:'HK$36'
+            price:'HK$250',
+            discounted_price:'HK$50'
         }
     ]
     return (

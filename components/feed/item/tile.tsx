@@ -10,6 +10,7 @@ import Comment from "./stats/comment";
 import Share from "./stats/share";
 import TileHeader from "./tile-header";
 import { Typography } from "@mui/material";
+import { useState } from "react";
 
 const FeedTile = (props: any) => {
 
@@ -18,12 +19,15 @@ const FeedTile = (props: any) => {
     console.log(post, sender);
 
     return (
-        <div style={{ padding: '4px 8px', boxShadow: '0px 0px 4px 4px rgba(0,0,0,0.05)', borderRadius: 20, margin: '24px 12px', maxWidth: '400px' }}>
+        <div style={{ padding: '8px 20px', boxShadow: '0px 0px 4px 4px rgba(0,0,0,0.05)', borderRadius: 20, margin: '16px 12px', width:'80%' }}>
             {/* HEADER */}
             <TileHeader sender={sender} post={post} />
             {/* INFO */}
-            <div>
-                <Typography style={{ padding: "0px 8px", fontSize: '15px', marginBottom:8 }}>{post.info.text.slice(0, 198)}{post.info.text.length > 150 ? <span style={{ color: '#000' }}>... <span style={{ color: '#0066FF' }}>Read</span></span> : null}</Typography>
+            <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                <div>
+                    <PostTitle post={post} />
+                    <PostBody post={post} />
+                </div>
                 {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
             </div>
             {/* STATS */}
@@ -31,10 +35,28 @@ const FeedTile = (props: any) => {
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <Like likes={post.stats.likes} />
                     <Comment comments={post.stats.comments} />
+                    <Share/>
                 </div>
-                <Share/>
             </div>
         </div>
+    )
+}
+
+const PostTitle = ({ post }: any) => {
+    
+    const [isExpanded, setIsExpanded] = useState(false);
+    return (
+        <Typography style={{ padding: "8px 8px", fontSize: '18px', marginBottom: 8, fontWeight:600}}>
+            {post.info.title}
+        </Typography>
+    )
+}
+
+const PostBody = ({post}: any) => {
+    return (
+        <Typography style={{ padding: "0px 8px", fontSize: '15px', marginBottom: 8 }}>
+            { post.info.text }{ post.info.text.length > 3000 ? <span style={{ color: '#000' }}>... <span style={{ color: '#0066FF' }}>Read</span></span> : null }
+        </Typography> 
     )
 }
 
