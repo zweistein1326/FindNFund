@@ -38,7 +38,7 @@ const LeftNav = ({setIsMenuVisible = ()=>{}}:any) => {
     console.log(mdOrSmaller);
 
     return (
-        <div style={{margin:0, paddingRight: 40, padding:'0px 0px', width:mdOrSmaller ? '80vw' : '12vw', display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-end'}}>
+        <div style={{margin:0, paddingRight: 0, padding:'0px 0px', width:mdOrSmaller ? '80vw' : '25%', display:'flex', flexDirection:'column', justifyContent:'flex-start', alignItems:'flex-end'}}>
             <Top />
         </div>
     )

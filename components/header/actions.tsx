@@ -8,7 +8,7 @@ const Actions = ({ user }: any) => {
     const activeUser = user;
     const { user_id } = useContext(LoginContext);
     return (
-        <div style={{width:'28vw', display:'flex', flexDirection:'row', justifyContent:'flex-start', padding:'0 30px', background:'white'}}>
+        <div style={{width:'25vw', display:'flex', flexDirection:'row', justifyContent:'flex-start', padding:'0 30px', background:'white'}}>
             {/* Add google with login option here */}
             {user_id !=='' ? <ActiveActions activeUser={activeUser}/> : <InactiveActions />}
         </div>

@@ -34,19 +34,21 @@ const Who2Follow = () => {
 
     const FollowTile = ({user}: any) => {
         return (
-            <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row'}}>
-                <img src={user.profile_image_url} style={{ height: 30, width: 30 }} />
-                <div style={{ margin: '0 12px'}}>
-                    <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                        <Typography style={{ fontWeight: 600, fontSize: 14, width:'180px'}}>
-                            {user.name}
-                            <VerifiedUser color='primary' style={{ fontSize: 16, marginLeft:4}} />
-                        </Typography>
+            <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'column'}}>
+                <div style={{padding:'8px 0', marginRight:12, display:'flex', flexDirection:'row'}}>
+                    <img src={user.profile_image_url} style={{ height: 30, width: 30 }} />
+                    <div style={{ margin: '0 12px'}}>
+                        <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                            <Typography style={{ fontWeight: 600, fontSize: 14, width:'180px'}}>
+                                {user.name}
+                                <VerifiedUser color='primary' style={{ fontSize: 16, marginLeft:4}} />
+                            </Typography>
+                        </div>
+                        <Typography style={{ fontWeight: 400, fontSize: 12, marginRight: 4 }}>@{user.username} | {user.followers} followers</Typography>
                     </div>
-                    <Typography style={{ fontWeight: 400, fontSize: 12, marginRight: 4 }}>@{user.username} | {user.followers} followers</Typography>
                 </div>
-                {!user.following ? <Button style={{ backgroundColor: '#0066FF', height: 40, flex: 1, borderRadius: 20, padding: '8px 12px', color: '#FFF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => { updateUser({...user, following:true})}}>Follow</Button> :
-                <Button style={{border:'1px solid #0066FF', backgroundColor:'#FFF', height:40, flex:1, borderRadius:20, padding:'8px 12px', color:'#0066FF', fontSize:14, textTransform:'capitalize'}}  onClick={() => { updateUser({...user, following:false})}}>Unfollow</Button>}
+                {!user.following ? <Button style={{ backgroundColor: '#0066FF', height: 30, flex: 1, borderRadius: 20, padding: '8px 12px', color: '#FFF', fontSize: 12, textTransform: 'capitalize' }} onClick={() => { updateUser({...user, following:true})}}>Follow</Button> :
+                <Button style={{border:'1px solid #0066FF', backgroundColor:'#FFF', height:30, flex:1, borderRadius:20, padding:'8px 12px', color:'#0066FF', fontSize:12, textTransform:'capitalize'}}  onClick={() => { updateUser({...user, following:false})}}>Unfollow</Button>}
             </div>
         )
     }
@@ -69,10 +71,6 @@ const Filters = () => {
             <div style={{marginTop:8}}>
                 <Typography style={{ margin: '8px 0', fontWeight:600}}>Topic</Typography>
                 <div>
-                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Radio />
-                        <Typography>All</Typography>
-                    </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <Radio />
                         <Typography>Education</Typography>
