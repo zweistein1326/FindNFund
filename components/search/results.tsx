@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const SearchResults = () => {
     return (
         <div style={{width:'100%'}}>
-            <SearchHeader />
+            {/* <SearchHeader /> */}
             <Results/>
         </div>
     )
@@ -18,7 +18,7 @@ const SearchResults = () => {
 export default SearchResults;
 
 const SearchHeader = () => {
-    const searchFIelds = ['Nonprofits', 'People', 'Posts']
+    const searchFIelds = ['Organizations', 'People', 'Posts']
     return (
         <div>
             <div style={{display:'flex', flexDirection:'row', alignItems:'center', margin:20}}>
@@ -59,8 +59,8 @@ const Results = () => {
     return (
         <div style={{width:'100%', paddingBottom:'40px'}}>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20 }}>
-                <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8 }}>
-                    <Typography style={{fontSize:20, fontWeight:600}}>Nonprofits</Typography>
+                <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', borderBottom: '1px solid rgba(0,0,0,0.2)', borderRadius: 0 }}>
+                    <Typography style={{fontSize:20, fontWeight:600}}>Organizations</Typography>
                     <div style={{ margin: '20px 0', display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
                         <div style={{display: 'flex', flexDirection: 'row', cursor:'pointer'}} onClick={()=>{router.push('/profile')}}>
                             <img alt='profile-image' src={user.profile_image_url} style={{ height: 60, width: 60}} />
@@ -80,19 +80,19 @@ const Results = () => {
                 </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20, flex:1}}>
-                <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, background:'#FFF', width:'100%'}}>
+                <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', borderBottom: '1px solid rgba(0,0,0,0.2)', borderRadius: 0, background:'#FFF', width:'100%'}}>
                     <Typography style={{fontSize:20, fontWeight:600}}>Activity</Typography>
                     <div style={{margin:'20px 0', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:'100%'}}>
                         {posts.slice(0,2).map((post: any, index: number) => <FeedTile key={index} post={post} />)} 
                     </div>
                 </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20, flex:1}}>
+            {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 20, flex:1}}>
                 <div style={{ padding: '20px 30px', margin: '4px', backgroundColor: '#FFF', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, width:'100%'}}>
                     <Typography style={{fontSize:20, fontWeight:600}}>People</Typography>
                     {people.map((person, index) => <PeopleTile person={person} key={index} />)}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

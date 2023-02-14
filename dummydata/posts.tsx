@@ -2,6 +2,7 @@ export interface Post {
     header: PostHeader,
     info: PostInfo,
     stats: PostStats,
+    categories: string[];
 }
 
 export interface PostHeader {
@@ -31,12 +32,13 @@ export const posts: Post[] = [
         info: {
             title:'Do you know anyone who might need our help in becoming job ready?',
             text: 'Do you know anyone who might need our help in becoming job ready? #sharepost within your network. BOOKS FOR ALL TRUST helps 12th pass #students from #marginalized #communities of Delhi Ncr to become JOB READY. To know more about the courses follow our next post or contact us on the provided numbers between 9 am to 5 pm.',
-            assets: [{uri:"/images/posts/post-1.jpeg"}],
+            assets: [{uri:"/images/posts/post-1.jpeg"}, {uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children_2.png?raw=true"}],
         },
         stats: {
             likes: 0,
             comments: 0,
-        }
+        },
+        categories:['Education', 'Poverty']
     },
     {
         header: {
@@ -51,7 +53,8 @@ export const posts: Post[] = [
         stats: {
             likes: 0,
             comments: 0,
-        }
+        },
+        categories:['Education', 'Poverty']
     },
     {
         header: {
@@ -66,7 +69,8 @@ export const posts: Post[] = [
         stats: {
             likes: 0,
             comments: 0,
-        }
+        },
+        categories:['Animal Welfare', 'Poverty']
     },
     {
         header: {
@@ -76,12 +80,13 @@ export const posts: Post[] = [
         info: {
             title:'Do you know anyone who might need our help in becoming job ready?',
             text: 'We are raising funds for sponsoring 3 bright students who have showed high caliber in the fields of science and technology.',
-            assets: [{uri:"https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children.png?raw=true"}],
+            assets: [{uri:"https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children.png?raw=true"}, {uri: "https://github.com/zweistein1326/FindNFund/blob/main/public/images/africa_children_2.png?raw=true"}],
         },
         stats: {
             likes: 90,
             comments: 202,
-        }
+        },
+        categories:['Environment', 'Sustainability']
     },
     {
         header: {
@@ -96,6 +101,7 @@ export const posts: Post[] = [
         stats: {
             likes: 90,
             comments: 202,
-        }
+        },
+        categories:['Education', 'Waste Management']
     },
 ];

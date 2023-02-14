@@ -2,6 +2,7 @@ import { VerifiedUser } from "@mui/icons-material";
 import { Button, Input, Radio, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
+import PostContext from "../../hooks/posts-context";
 import UsersContext from "../../hooks/users-context-provider";
 
 const RightNav = () => { 
@@ -18,11 +19,11 @@ const RightNav = () => {
     return (
         router.pathname == '/feed'  ? <div style={{ height: '100vh', width: '25%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
             <Filters />
-            <Who2Follow />
+            {/* <Who2Follow /> */}
             {/* <Fundraisers /> */}
         </div> : <div style={{ height: '100vh', width: '25%', padding: '40px 40px', overflowY:'scroll', paddingBottom:120}}>
             <Filters />
-            <Who2Follow />
+            {/* <Who2Follow /> */}
             {/* <Fundraisers /> */}
         </div>
     )
@@ -30,7 +31,7 @@ const RightNav = () => {
 
 const Who2Follow = () => {
 
-    const {users, updateUser} = useContext(UsersContext);
+    const { users, updateUser } = useContext(UsersContext);
 
     const FollowTile = ({user}: any) => {
         return (
@@ -65,6 +66,7 @@ const Who2Follow = () => {
 }
 
 const Filters = () => {
+    const { setFilters, filters } = useContext(PostContext);
     return (
         <div style={{ width: '100%', marginBottom:20}}>
             <Typography variant="h6" style={{padding:'12px 0', fontWeight:'bold'}}>Filter posts by</Typography>
@@ -72,19 +74,21 @@ const Filters = () => {
                 <Typography style={{ margin: '8px 0', fontWeight:600}}>Topic</Typography>
                 <div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Radio />
+                        <Radio value='Education' checked={filters.findIndex((filter)=>filter=='Education') > -1} onChange={(e) => {
+                            setFilters([e.target.value]);
+                        }} />
                         <Typography>Education</Typography>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Radio />
-                        <Typography>Elderly care</Typography>
+                        <Radio value='Sustainability'/>
+                        <Typography>Sustainability</Typography>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Radio />
-                        <Typography>Covid-19 relief</Typography>
+                        <Radio value='Waste Management'/>
+                        <Typography>Waste Management</Typography>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Radio />
+                        <Radio value='Animal Welfare'/>
                         <Typography>Animal Welfare</Typography>
                     </div>
                 </div>

@@ -69,8 +69,7 @@ const TileHeader = ({ sender, post }: any) => {
                         <Typography style={{fontSize:12}}>#Education</Typography>
                     </div>
             </div>
-            {1 == 1? <Button style={{ backgroundColor: '#FFF', height: 40, borderRadius: 20, padding: '8px 12px', border:'1px solid #0066FF', color:'#0066FF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => {}}>+ Follow</Button> :
-            null}
+            {1==1 ? null : <Button style={{ backgroundColor: '#FFF', height: 40, borderRadius: 20, padding: '8px 12px', border:'1px solid #0066FF', color:'#0066FF', fontSize: 14, textTransform: 'capitalize' }} onClick={() => {}}>+ Follow</Button>}
         </div>
     );
 }

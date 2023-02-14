@@ -26,6 +26,7 @@ export default function App(props: MyAppProps) {
   const [modalInfo, setModalInfo] = useState({ isVerified: false });
   const [user_id, setUserId] = useState('1');
   const [users, setUsers] = useState(appUsers);
+  const [filters, setFilters] = useState([]);
 
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
@@ -56,7 +57,11 @@ export default function App(props: MyAppProps) {
       <PostContext.Provider value={{
         posts: posts,
         addPost: (post: any)=>{setPosts([post, ...posts])},
-        updatePost: () => { }
+        updatePost: () => { },
+        filters: filters,
+        setFilters: (new_filters: any) => {
+          setFilters(new_filters);
+        }
       }}>
         <ModalContext.Provider value={{
           isModalVisible: isModalVisible,

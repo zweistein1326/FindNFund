@@ -27,17 +27,17 @@ const FeedTile = (props: any) => {
                 <div>
                     <PostTitle post={post} />
                     <PostBody post={post} />
+                    {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
                 </div>
-                {post.info.assets.length > 0 ? <AttachmentTile assets={post.info.assets} /> : null}
             </div>
             {/* STATS */}
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', padding:"0px 8px", alignItems:'center', paddingBottom:12}}>
+            {/* <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', padding:"0px 8px", alignItems:'center', paddingBottom:12}}>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <Like likes={post.stats.likes} />
                     <Comment comments={post.stats.comments} />
                     <Share/>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
